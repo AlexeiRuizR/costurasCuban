@@ -1,3 +1,5 @@
+import { inicializarCarrinho } from "./src/meuCarrinho";
+
 const catalogo = [
     { id: 1, 
         marca: 'Zara', 
@@ -54,18 +56,20 @@ const catalogo = [
         preco: 88, 
         imagem: 'product-8.jpg', 
         feminino: true, 
-        } 
+        } ,
 ]
 
 for (const produtoCatalogo of catalogo){
 
-    const cartaoProduto = `<div id="card-produto">
-    <img src="assets/img/${produtoCatalogo.imagem}" alt="produto costura cuban">
-    <p>${produtoCatalogo.marca}</p>
-    <p>${produtoCatalogo.nome}</p>
-    <p>$${produtoCatalogo.preco}</p>
-    <button>Adicionar</button>
+    const cartaoProduto = `<div class="border-solid border-2 border-sky-500 w-40 m-2" id="card-produto">
+    <img class="p-2 h-64" src="assets/img/${produtoCatalogo.imagem}" alt="produto costura cuban">
+    <p class="px-2 marca">${produtoCatalogo.marca}</p>
+    <p class="px-2">${produtoCatalogo.nome}</p>
+    <p class="px-2">$${produtoCatalogo.preco}</p>
+    <button class="px-2">Adicionar</button>
     </div>`;
     
     document.getElementById("container-producto").innerHTML += cartaoProduto;
 }
+
+inicializarCarrinho()
